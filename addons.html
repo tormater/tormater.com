@@ -1,0 +1,130 @@
+---
+title: Addons
+layout: default
+addons:
+  -
+    name: "Favicon Color"
+    url: "https://github.com/tormater-yak/favicon-color"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "Makes your favicon match your Tormater Forum's color."
+    img: "favicon-color"
+    type: "extension"
+  -
+    name: "Online List"
+    url: "https://github.com/tormater-yak/online-list"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "Adds a list of online users to your Tormater Forum."
+    img: "online-list"
+    type: "extension"
+  -
+    name: "URL Slugs"
+    url: "https://github.com/tormater-yak/slug-urls"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "Adds prettier URLs to your Tormater Forum."
+    img: "slug-urls"
+    type: "extension"
+  -
+    name: "Split & Merge"
+    url: "https://github.com/tormater-yak/split-and-merge"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "Allows for more advanced thread management."
+    img: "split-and-merge"
+    type: "extension"
+  -
+    name: "User Themes"
+    url: "https://github.com/tormater-yak/user-themes"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "Adds a theme selector for individual users."
+    img: "user-themes"
+    type: "extension"
+  -
+    name: "ReCAPTCHA"
+    url: "https://github.com/tormater/reCAPTCHA"
+    author: "Tormater Team"
+    author_url: "https://github.com/tormater"
+    desc: "Replaces the default Tormater Forum captcha with Google's reCAPTCHA."
+    img: "recaptcha"
+    type: "extension"
+  -
+    name: "AuroraRTL"
+    url: "https://github.com/tormater/AuroraRTL"
+    author: "abdulhalim"
+    author_url: "https://pourdaryaei.ir/links"
+    desc: "A right-to-left version of the Aurora theme."
+    img: "aurora_rtl"
+    type: "theme"
+  -
+    name: "SkylineRTL"
+    url: "https://github.com/tormater/SkylineRTL"
+    author: "abdulhalim"
+    author_url: "https://pourdaryaei.ir/links"
+    desc: "A right-to-left version of the Skyline theme."
+    img: "skyline_rtl"
+    type: "theme"
+
+  -
+    name: "Leaf"
+    url: "https://github.com/tormater/Leaf"
+    author: "Tormater Team"
+    author_url: "https://github.com/tormater"
+    desc: "A light, low-impact design for your Tormater Forum."
+    img: "leaf"
+    type: "theme"
+  -
+    name: "FastTormater2"
+    url: "https://github.com/tormater/fasttormater2"
+    author: "tormater-yak"
+    author_url: "https://github.com/tormater-yak"
+    desc: "An old-school tracker inspired design for your Tormater Forum."
+    img: "fasttormater2"
+    type: "theme"
+---
+
+<h2 class="page_title">Addons for Tormater Forum</h2>
+<div class="addon_cards">
+{% for addon in page.addons %}
+  {% if addon.type == "extension" %}
+    <div class="addon_card card_{{ addon.type }}">
+      <div class="addon_img_container">
+        <img class="img_{{ addon.type }}" src="{{"/assets/images/addons/" | absolute_url }}{{ addon.img }}.png">
+      </div>
+      <div>
+        <span class="addon_title">{{ addon.name }}</span>
+        <span class="addon_author">by <a href="{{ addon.author_url }}" target="_blank">{{ addon.author }}</a></span>
+        <span>{{ addon.desc }}</span><br><br>
+      </div>
+      <a class="addon_dl" href="{{ addon.url }}" target="_blank">
+        <img src="{{"/assets/images/download_small.png" | absolute_url }}">download
+      </a>
+    </div>
+  {% endif %}
+{% endfor %}
+</div>
+
+<div class="addon_cards">
+{% for addon in page.addons %}
+  {% if addon.type == "theme" %}
+    <div class="addon_card card_{{ addon.type }}">
+      <div class="addon_img_container">
+        <img class="img_{{ addon.type }}" src="{{"/assets/images/addons/" | absolute_url }}{{ addon.img }}.png">
+      </div>
+      <div>
+        <span class="addon_title">{{ addon.name }}</span>
+        <span class="addon_author">by <a href="{{ addon.author_url }}" target="_blank">{{ addon.author }}</a></span>
+        <span>{{ addon.desc }}</span><br><br>
+      </div>
+      <a class="addon_dl" href="{{ addon.url }}" target="_blank">
+        <img src="{{"/assets/images/download_small.png" | absolute_url }}">download
+      </a>
+    </div>
+  {% endif %}
+{% endfor %}
+  <div class="addon_card addon_filler" style="grid-column: span 2;">
+    <span>Can't find an extension or theme you're looking for?<br>Suggest your idea to our developer team by creating a thread on the <a href="https://forum.tormater.com">Tormater community forum</a>!</span>
+  </div>
+</div>

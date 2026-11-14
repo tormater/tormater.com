@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% assign lastUpdated = site.time | date:'?v=%s' %}
+  <link rel="stylesheet" href="{{"assets/css/style.css" | absolute_url | append: lastUpdated }}">
+  <link rel="Shortcut Icon" href="{{"assets/images/favicon.ico" | absolute_url }}">
+  <link rel="canonical" href="https://tormater.com">
+  
+  <title>{{ page.title }} | Tormater.com</title>
+  <meta name="description" content="Tormater.com: The official homepage of the Tormater Community.">
+  <meta name="keywords" content="tormater, tor mater, tormater™, php, gzdoom, zdoom, software, development">
+  <meta name="author" content="Tormater Organization">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#556379">
+  
+  
+  <meta property="og:title" content="{% if page.meta_title.size > 0 %}{{ page.meta_title }}{% else %}{{ page.title }} | Tormater.com{% endif %}">
+  <meta property="og:description" content="{{ page.meta_desc }}">
+  <meta property="og:image" content="{{page.meta_img | absolute_url }}">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://tormater.com/">
+  <meta property="twitter:title" content="{% if page.meta_title.size > 0 %}{{ page.meta_title }}{% else %}{{ page.title }} | Tormater.com{% endif %}">
+  <meta property="twitter:description" content="{{ page.meta_desc }}">
+  <meta property="twitter:image" content="{{page.meta_img | absolute_url }}">
+</head>
+<body>
+  <div id="body">
+    <div id="content">
+      <div class="header"><a href="{{"/" | absolute_url }}">Tormater.com</a></div>
+      <div class="nav"><!--
+        --><a href="{{"/" | absolute_url }}">Home</a><!--
+        --><a href="https://forum.tormater.com"><span class="long">Community</span><span class="short">Forum</span></a><!--
+        --><a href="{{"/projects" | absolute_url }}">Projects</a><!--
+        --><a href="{{"/addons" | absolute_url }}">Addons</a><!--
+        --><a href="{{"/about" | absolute_url }}">About<span class="long"> us</span></a><!--
+      --></div>
+      <div class="lower"> 
+        {{ content }}
+      </div>
+    </div>
+    <div id="sidebar">
+      <a id="sidebar_logo" href="{{"/" | absolute_url }}"><div class="header has_logo">&#xfeff;</div></a>
+      <div class="nav">&#xfeff;</div>
+      <div class="lower"> 
+      <b class="link_title"><span class="long">Tormater™ </span>Community</b>
+        <ul class="nav_list">
+          <li><a href="https://forum.tormater.com"><img src="{{"assets/images/torforum.svg" | absolute_url }}"><span class="long">Tormater </span>Forum</a></li>
+          <li><a href="https://discord.gg/zbQUz6XeHS"><img src="{{"assets/images/chat_discord.svg" | absolute_url }}"><span class="long">Tormater </span>Discord</a></li>
+          <!-- <li><a href=""><img src="{{"assets/images/torblog.png" | absolute_url }}"><span class="long">Tormater </span>Blogspot</a></li> -->
+        </ul>
+      <br>
+      <b class="link_title"><span class="long">Tormater™ </span>Games</b>
+        <ul class="nav_list">
+          <li><a href="{{"/projects/tormater-3d" | absolute_url }}"><img src="{{"assets/images/tormater3d.svg" | absolute_url }}">Tormater 3D</a></li>
+          <li><a href="{{"/projects/tormater-2" | absolute_url }}"><img src="{{"assets/images/tormater2.svg" | absolute_url }}">Tormater 2</a></li>
+          <li><a href="{{"/projects/tormater-cd" | absolute_url }}"><img src="{{"assets/images/tormatercd.svg" | absolute_url }}">Tormater CD</a></li>
+        </ul>
+      <br>
+      <b class="link_title">Future <span class="long">Tormater™ </span>Games</b>
+        <ul class="nav_list">
+          <li><abbr title="Coming soon..."><img src="{{"assets/images/unknown.svg" | absolute_url }}"><span class="long">Tormater </span>Toxic Waste</abbr></li>
+          <li><abbr title="Coming soon..."><img src="{{"assets/images/unknown.svg" | absolute_url }}">Tormater 3</abbr></li>
+          <li><abbr title="Coming soon..."><img src="{{"assets/images/unknown.svg" | absolute_url }}"><span class="long">Super </span>Tormater Bros.</abbr></li>
+          <!-- <li><abbr title="Coming soon...">Toxic Waste: Aftermath</abbr></li> -->
+        </ul>
+      <br>
+      <a class="tormaterfm" href="{{"/fm" | absolute_url }}"><img src="{{"assets/images/tormaterfm_small.png" | absolute_url }}" alt="tormaterfm"></a>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div><span>Copyright © 2023-2026 Tormater™.com (All rights reserved).
+    <br><br>
+    We use some images from the Crystal Project (Copyright © 2006-2007 Everaldo Coelho).<br>
+    {{ page.extra_copyright }}
+    </span>
+    </div>
+    <div class="legal">
+      <a class="text_with_icon" href="{{"/contact" | absolute_url }}"><img src="{{"assets/images/contact.svg" | absolute_url }}"><span>contact</span></a> | <a class="text_with_icon" href="{{"/terms" | absolute_url }}"><img src="{{"assets/images/text.svg" | absolute_url }}"><span>terms of use</span></a> | <a class="text_with_icon" href="{{"/feed.xml" | absolute_url }}"><img src="{{"assets/images/feed.svg" | absolute_url }}"><span>feed</span></a>
+    </div>
+  </div>
+</body>
+</html>

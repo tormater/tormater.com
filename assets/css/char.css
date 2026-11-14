@@ -1,0 +1,109 @@
+#girl {
+    background-image: url(tormaterfmgirl.png);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    transform: scale(2); 
+    image-rendering: pixelated;
+    margin-top: -56px;
+    transition: margin-top 0.25s;
+    filter: drop-shadow(#0002 1px 1px);
+    margin-left: 4px;
+}
+
+#girl:hover {
+    cursor: pointer;
+}
+
+
+.girl-click1 {
+    background-position: -4px -4px;
+    width: 28px;
+    height: 67px;
+}
+
+.girl-sit1 {
+    background-position: -37px -4px;
+    width: 26px;
+    height: 67px;
+}
+
+.girl-sit2 {
+    background-position: -70px -4px;
+    width: 26px;
+    height: 67px;
+}
+
+.girl-sit3 {
+    background-position: -103px -4px;
+    width: 26px;
+    height: 67px;
+}
+
+.girl-sit4 {
+    background-position: -4px -79px;
+    width: 26px;
+    height: 67px;
+}
+
+.girl-click2 {
+    background-position: -37px -79px;
+    width: 29px;
+    height: 65px;
+}
+
+.girl-sit5 {
+    background-position: -70px -79px;
+    width: 26px;
+    height: 66px;
+}
+
+.girl-walk1 {
+    background-position: -103px -79px;
+    width: 29px;
+    height: 71px;
+}
+
+.girl-walk2 {
+    background-position: -4px -154px;
+    width: 24px;
+    height: 69px;
+}
+
+.girl-walk3 {
+    background-position: -37px -154px;
+    width: 24px;
+    height: 71px;
+}
+
+.girl-walk4 {
+    background-position: -70px -154px;
+    width: 25px;
+    height: 68px;
+}
+
+.girl-walkr1 {
+    background-position: -103px -154px;
+    width: 29px;
+    height: 71px;
+}
+
+.girl-walkr2 {
+    background-position: -4px -229px;
+    width: 24px;
+    height: 69px;
+}
+
+.girl-walkr3 {
+    background-position: -37px -229px;
+    width: 25px;
+    height: 71px;
+}
+
+.girl-walkr4 {
+    background-position: -70px -229px;
+    width: 25px;
+    height: 68px;
+}
+

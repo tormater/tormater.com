@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="card_{{ page.color }} project_tab">{{ page.title }}</div>{% if page.wiki.size > 0 %}<div class="card_green project_tab"><a href="{{page.wiki | absolute_url }}Home">Project wiki</a></div>{% endif %}<div class="card_gold project_tab"><a href="#" onclick="navigator.clipboard.writeText('{{page.url | absolute_url }}')">Copy link</a></div><div class="card_red project_tab long"><a href="{{"/projects" | absolute_url }}">Back to Projects</a></div>
+<div class="card_{{ page.color }} project_listing">
+  <img class="project_banner" src="{{page.banner | absolute_url }}">
+  <div class="project_seperator"></div>
+  <div class="project_columns">
+      <fieldset class="project_field"><legend class="project_title">About</legend>
+        {{ content }}
+      </fieldset>
+      <br class="mobile_only">
+      <fieldset class="project_field"><legend class="project_title">Downloads</legend>
+        {% for link in page.downloads %}
+          {% if link.type == "big" %}
+            <a class="download dl_big" href="{{ link.url }}">
+              <img src="{{"/assets/images/download.png" | absolute_url }}"><span>{{ link.name }} ({{ link.size }})</span>
+            </a>
+          {% elsif link.type == "old" %}
+            <a class="download dl_small" href="{{ link.url }}">
+              <img src="{{"/assets/images/download_old.png" | absolute_url }}"><span>{{ link.name }} ({{ link.size }})</span>
+            </a>
+          {% else %}
+            <a class="download dl_small" href="{{ link.url }}">
+              <img src="{{"/assets/images/download_small.png" | absolute_url }}"><span>{{ link.name }} ({{ link.size }})</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+        
+      {% if page.release.size > 0 %}
+        <span class="project_date">Released {{ page.release }}</span>
+      {% endif %}
+      </fieldset>
+  </div>
+  <br>
+  {% if page.gallery.size > 0 %}
+  <fieldset class="project_field"><legend class="project_title">Gallery</legend>
+    <div class="project_gallery">
+      {% for media in page.gallery %}
+        {% if media.type == "photo" %}
+          <a href="{{ media.url | absolute_url }}" class="{% if media.main == "true" %} main_gallery_item{% endif %}" target="_blank"><img class="project_img{% if media.main == "true" %} main_gallery_item{% endif %}" src="{{ media.url | absolute_url }}" ></a>
+        {% elsif media.type == "video" %}
+          <iframe class="project_vid{% if media.main == "true" %} main_gallery_item{% endif %}" src="{{ media.url }}" frameborder="0" allowfullscreen></iframe>
+        {% else %}
+          {{ media.content }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </fieldset>
+  {% endif %}
+</div>
